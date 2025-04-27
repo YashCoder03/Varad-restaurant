@@ -16,7 +16,23 @@ public class DishBean {
     int categoryId;
 
     String dishURL;
-    
+
+    int price;
+
+    public DishBean(String name, int categoryId, String dishURL, int price) {
+        this.name = name;
+        this.categoryId = categoryId;
+        this.dishURL = dishURL;
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     public DishBean() {
     }
