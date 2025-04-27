@@ -21,13 +21,13 @@ public class DishController {
     @Autowired
     private DishRepository dishRepository;
 
-    @GetMapping("/dish/{limit}")
+    @GetMapping("/trendingDishes/{limit}")
     public List<DishBean> TopDish(@PathVariable int limit){
 
         List<DishBean> ls =  dishRepository.findAll();
         return ls;
-
     }
+
 
     @GetMapping("/dish/test")
     public String test(){
