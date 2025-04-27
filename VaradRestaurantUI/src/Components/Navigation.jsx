@@ -1,24 +1,26 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { GiBeachBag } from "react-icons/gi";
+import { TbLogin2 } from "react-icons/tb";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <nav className="hidden lg:flex justify-between items-center bg-[#bfbfbf] h-18 p-4">
-        <h1 className="text-[24px] font-bold">Varad Restaurant</h1>
+      <nav className="hidden md:flex justify-between items-center bg-[#bfbfbf] h-18 p-4">
+        <h1 className="text-[24px] font-bold cursor-pointerr transition-button"><NavLink to={'/'}> Varad Restaurant </NavLink></h1>
         <ul className="flex gap-8">
-          <li className="hover:underline cursor-pointer"><NavLink to={'/'}> Home </NavLink> </li>
-          <li className="hover:underline cursor-pointer"><NavLink to={'/menu'}> Menu </NavLink></li>
-          <li className="hover:underline cursor-pointer"><NavLink to={'/about'}>About Us </NavLink></li>
-          <li className="hover:underline cursor-pointer">Contact Us</li>
-          <li className="hover:underline cursor-pointer">Cart</li>
+          <li className="hover:font-bold cursor-pointer"><NavLink to={'/'}> Home </NavLink> </li>
+          <li className="hover:font-bold cursor-pointer"><NavLink to={'/menu'}> Menu </NavLink></li>
+          <li className="hover:font-bold cursor-pointer"><NavLink to={'/about'}>About Us </NavLink></li>
+          <li className="hover:font-bold cursor-pointer ">Contact Us</li>
+          <li className=" cursor-pointer"><GiBeachBag size={22} className="transition-button" /></li>
         </ul>
-        <div className="cursor-pointer mr-7">Login</div>
+        <div className="cursor-pointer mr-7"><NavLink to={'/login'} className={'flex items-center gap-2'}> <TbLogin2 /> Login</NavLink></div>
       </nav>
       {/* Mobile Top Bar */}
-      <nav className="lg:hidden bg-[#bfbfbf] p-4 flex justify-between items-center">
+      <nav className="md:hidden bg-[#bfbfbf] p-4 flex justify-between items-center">
         <h1 className="text-xl font-bold">Varad</h1>
         <button onClick={() => setIsOpen(true)} className="text-2xl font-bold">
           {!isOpen && '☰'}
@@ -39,13 +41,13 @@ const Navigation = () => {
           {/* Menu Items */}
           <ul className="text-2xl space-y-6 text-center">
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
-              Home
+            <NavLink to={'/'}> Home </NavLink>
             </li>
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
-              Menu
+            <NavLink to={'/menu'}> Menu </NavLink>
             </li>
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
-              About Us
+            <NavLink to={'/about'}>About Us </NavLink>
             </li>
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
               Contact
@@ -54,7 +56,7 @@ const Navigation = () => {
               Cart
             </li>
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
-              Login
+            <NavLink to={'/login'} className={'flex items-center gap-2'}> <TbLogin2 />Login</NavLink>
             </li>
           </ul>
         </div>
