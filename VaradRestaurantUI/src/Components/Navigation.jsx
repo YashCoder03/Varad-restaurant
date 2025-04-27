@@ -2,28 +2,63 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GiBeachBag } from "react-icons/gi";
 import { TbLogin2 } from "react-icons/tb";
+import deliveryboyLogo from "../../src/assets/FoodDelivery_logo.png";
+import FoodDeliverylogoTextt from "../../src/assets/FoodDeliverylogoTextt.png";
+import { PiHamburgerLight } from "react-icons/pi";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <nav className="hidden md:flex justify-between items-center bg-[#bfbfbf] h-18 p-4">
-        <h1 className="text-[24px] font-bold cursor-pointerr transition-button"><NavLink to={'/'}> Varad Restaurant </NavLink></h1>
+      <nav className="hidden md:flex justify-between items-center bg-white h-18 p-4">
+        <div className="text-[24px] ml-3 font-bold cursor-pointerr transition-button">
+          <NavLink
+            to={"/"}
+            className={"flex justify-center items-center"}
+          >
+            <img src={deliveryboyLogo} alt="Food Logo" className="size-10" />
+            <img
+              src={FoodDeliverylogoTextt}
+              alt="Varad Restaurant"
+              className="h-15 max-w-40"
+            />{" "}
+          </NavLink>
+        </div>
         <ul className="flex gap-8">
-          <li className="hover:font-bold cursor-pointer"><NavLink to={'/'}> Home </NavLink> </li>
-          <li className="hover:font-bold cursor-pointer"><NavLink to={'/menu'}> Menu </NavLink></li>
-          <li className="hover:font-bold cursor-pointer"><NavLink to={'/about'}>About Us </NavLink></li>
+          <li className="hover:font-bold cursor-pointer">
+            <NavLink to={"/"}> Home </NavLink>{" "}
+          </li>
+          <li className="hover:font-bold cursor-pointer">
+            <NavLink to={"/menu"}> Menu </NavLink>
+          </li>
+          <li className="hover:font-bold cursor-pointer">
+            <NavLink to={"/about"}>About Us </NavLink>
+          </li>
           <li className="hover:font-bold cursor-pointer ">Contact Us</li>
-          <li className=" cursor-pointer"><GiBeachBag size={22} className="transition-button" /></li>
+          <li className=" cursor-pointer">
+            <GiBeachBag size={22} className="transition-button" />
+          </li>
         </ul>
-        <div className="cursor-pointer mr-7"><NavLink to={'/login'} className={'flex items-center gap-2'}> <TbLogin2 /> Login</NavLink></div>
+        <div className="cursor-pointer mr-7">
+          <NavLink to={"/login"} className={"flex items-center gap-2"}>
+            {" "}
+            <TbLogin2 /> Login
+          </NavLink>
+        </div>
       </nav>
       {/* Mobile Top Bar */}
-      <nav className="md:hidden bg-[#bfbfbf] p-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">Varad</h1>
-        <button onClick={() => setIsOpen(true)} className="text-2xl font-bold">
-          {!isOpen && '☰'}
+      <nav className="md:hidden bg-white p-4 flex justify-between items-center">
+        <div className="flex justify-center items-center">
+        <img src={deliveryboyLogo} alt="Food Logo" className="size-10" />
+        <img
+          src={FoodDeliverylogoTextt}
+          alt="Varad Restaurant"
+          className="h-10 max-w-30"
+        />
+        </div>
+        <button onClick={() => setIsOpen(true)} className="text-2xl font-bold cursor-pointer">
+          {!isOpen && <PiHamburgerLight />}
         </button>
       </nav>
 
@@ -41,13 +76,13 @@ const Navigation = () => {
           {/* Menu Items */}
           <ul className="text-2xl space-y-6 text-center">
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
-            <NavLink to={'/'}> Home </NavLink>
+              <NavLink to={"/"}> Home </NavLink>
             </li>
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
-            <NavLink to={'/menu'}> Menu </NavLink>
+              <NavLink to={"/menu"}> Menu </NavLink>
             </li>
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
-            <NavLink to={'/about'}>About Us </NavLink>
+              <NavLink to={"/about"}>About Us </NavLink>
             </li>
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
               Contact
@@ -56,7 +91,11 @@ const Navigation = () => {
               Cart
             </li>
             <li onClick={() => setIsOpen(false)} className="cursor-pointer">
-            <NavLink to={'/login'} className={'flex items-center gap-2'}> <TbLogin2 />Login</NavLink>
+              <NavLink to={"/login"} className={"flex items-center gap-2"}>
+                {" "}
+                <TbLogin2 />
+                Login
+              </NavLink>
             </li>
           </ul>
         </div>
