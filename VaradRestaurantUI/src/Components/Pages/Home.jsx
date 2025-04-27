@@ -19,7 +19,7 @@ const Home = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-[-1]"></div>
         {/* Foreground content */}
         <div className="flex flex-col items-center justify-center gap-5 h-full text-white z-10 relative">
-          <h1 className="text-2xl md:text-4xl font-bold text-center">
+          <h1 className="text-2xl md:text-4xltext-center font-roboto">
             Delivering Food Delivering Happiness
           </h1>
           <h1 className="text-xl mt-7 md:text-4xl mt-5 text-center">Get Flat 30% off on All Food items</h1>

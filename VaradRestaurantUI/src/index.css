@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.transition-button {
+    @apply transition delay-150 duration-300 ease-in-out hover:scale-115;
+  }
