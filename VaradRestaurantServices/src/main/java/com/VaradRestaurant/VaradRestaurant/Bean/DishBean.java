@@ -1,14 +1,11 @@
 package com.VaradRestaurant.VaradRestaurant.Bean;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity(name="Dish")
+
+
+@Document(collection = "dishes")
 public class DishBean {
-
-    @Id
-    @GeneratedValue
     int id;
 
     String name;
@@ -19,11 +16,19 @@ public class DishBean {
 
     int price;
 
-    public DishBean(String name, int categoryId, String dishURL, int price) {
-        this.name = name;
+    int rating;
+    
+    boolean isAvailable;
+
+
+
+    public DishBean(int categoryId, String dishURL, boolean isAvailable, String name, int price, int rating) {
         this.categoryId = categoryId;
         this.dishURL = dishURL;
+        this.isAvailable = isAvailable;
+        this.name = name;
         this.price = price;
+        this.rating = rating;
     }
 
     public int getPrice() {
@@ -35,12 +40,6 @@ public class DishBean {
     }
 
     public DishBean() {
-    }
-
-    public DishBean(String name, int categoryId, String dishURL) {
-        this.name = name;
-        this.categoryId = categoryId;
-        this.dishURL = dishURL;
     }
 
     public String getDishURL() {
@@ -56,11 +55,6 @@ public class DishBean {
         this.categoryId = categoryId;
     }
 
-    public DishBean(int id, String name, int categoryId) {
-        this.id = id;
-        this.name = name;
-        this.categoryId = categoryId;
-    }
 
     public int getId() {
         return id;
@@ -84,5 +78,21 @@ public class DishBean {
 
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public boolean isIsAvailable() {
+        return isAvailable;
+    }
+
+    public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }
