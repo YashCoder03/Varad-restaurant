@@ -1,18 +1,26 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import DeliveryBoyImg from "../../assets/foodDeliveryIMG.jpg";
+import foodLoginBG from "../../assets/foodLoginBG.mp4"
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col bg-gray-100 md:flex-row h-3/4 mt-2">
       <div className="mt-7 md:w-full md:w-1/2 flex justify-center items-center">
-        <img
-          src={DeliveryBoyImg}
-          alt="Food Delivery Boy logo"
-          className="w-3/4"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="px-4 "
+        >
+          <source src={foodLoginBG} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
-      <div className="mt-7 md:w-full md:w-1/2 flex flex-col justify-center items-center space-y-5">
+      <div className="my-5 md:w-full md:w-1/2 md:my-25 flex flex-col justify-center items-center space-y-5">
         <input
           type="text"
           placeholder="Email Address"
@@ -25,10 +33,10 @@ const Login = () => {
         />
 
         <button className="w-3/4 bg-[#ff8035] text-white py-2 rounded cursor-pointer">
-          Login
+          Signin
         </button>
         <div>Don't have an Account?</div>
-        <button className="w-3/4 bg-[#ff8035] text-white py-2 rounded cursor-pointer">
+        <button onClick={() => navigate('/register')} className="w-3/4 bg-[#ff8035] text-white py-2 rounded cursor-pointer">
           Signup
         </button>
         <button className="w-1/2 flex justify-center items-center gap-3 bg-white text-black py-2 rounded cursor-pointer">

@@ -1,4 +1,5 @@
 import bgVideo from "../../assets/Food_Video_1.mp4";
+import Card from "../common/Card";
 
 const Home = () => {
   return (
@@ -26,42 +27,14 @@ const Home = () => {
           <button className=" bg-[#302c2c99] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  cursor-pointer p-2 rounded-md">Checkout All trending Items</button>
         </div>
       </div>
+      <h2 className="text-center mt-3 text-[30px] text-bold">Bestselling Food Items</h2>
+      <div className="mt-10 mx-3 flex items-center flex-wrap justify-center gap-4">
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque et
-        debitis aut a repellat culpa perferendis, placeat eos quis dicta
-        aliquam! Natus, repudiandae reprehenderit! Praesentium unde blanditiis
-        eius aperiam natus quasi quae, doloremque magni assumenda. Beatae
-        temporibus vitae animi doloribus, laborum incidunt pariatur illum
-        dolores voluptatem blanditiis reiciendis saepe impedit similique dolorum
-        veritatis ullam fugiat quo rem libero nemo nam sapiente ipsam vero. Iste
-        a veniam at aliquid saepe unde, tempora debitis! Soluta recusandae
-        consequuntur voluptatem suscipit iusto. Sapiente nisi debitis eveniet
-        expedita quae eum nemo, mollitia molestiae perferendis dicta? Dolorum
-        dicta ipsum, esse cupiditate reiciendis quas impedit, optio consectetur
-        natus ut aperiam quibusdam vel at expedita ex. Fugit quae, itaque illo
-        magnam odit corrupti dolores voluptas animi tempora? Ut impedit mollitia
-        nam neque quidem quam culpa eius tenetur aut dolor dicta illo aperiam
-        ipsum officia nihil debitis modi, veniam libero perferendis facere
-        repellendus et, dolores fuga similique. Voluptate esse sint magni aut,
-        minus dolor vero odit suscipit sapiente ex blanditiis mollitia
-        recusandae expedita quaerat, culpa explicabo necessitatibus dolores
-        possimus cum animi, inventore facere obcaecati provident repellendus.
-        Dolorem magni nam aut sint ea ex enim qui nostrum veritatis. Error
-        tenetur possimus iste dolore cum, ducimus recusandae itaque, expedita
-        sit quis inventore ab perspiciatis nemo. Ad, minima ab. Deserunt aut
-        natus magni quisquam! Placeat consequuntur tempora repellat nam
-        molestiae, est minima quibusdam. Voluptatibus esse harum temporibus,
-        ullam voluptate, quibusdam aspernatur perferendis, corporis impedit ipsa
-        asperiores distinctio tempore dignissimos. Enim autem accusantium
-        dolorum, dignissimos magni dolorem quo ad consequatur eos nemo iste ut
-        temporibus laborum distinctio est qui blanditiis eligendi ab
-        consequuntur assumenda debitis nam molestias reiciendis quis. Dolorem
-        amet velit quia! Sit, magnam id doloremque quidem optio cumque velit
-        totam consequatur debitis iure placeat cupiditate eligendi in? Ea
-        possimus sit obcaecati voluptatem, laboriosam sequi eum neque,
-        necessitatibus fuga error illum praesentium.
-      </p>
+      <Card/>
+      <Card/>
+
+      </div>
+
     </>
   );
 };
