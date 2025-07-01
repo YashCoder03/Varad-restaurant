@@ -2,10 +2,14 @@ package com.VaradRestaurant.VaradRestaurant.Auth;
 
 import java.util.Date;
 
+import org.springframework.context.annotation.Configuration;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+
+@Configuration
 public class Jwtutil {
 
     private final String SECRET_KEY = "ansjkdnoanavwc";

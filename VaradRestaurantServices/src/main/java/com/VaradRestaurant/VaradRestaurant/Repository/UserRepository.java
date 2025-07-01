@@ -8,6 +8,6 @@ import com.VaradRestaurant.VaradRestaurant.Bean.UserBean;
 
 public interface UserRepository extends MongoRepository<UserBean,String>{
 
-    Optional<UserBean> findByUserName(String username);
+    Optional<UserBean> findByUsername(String username);
     
 }

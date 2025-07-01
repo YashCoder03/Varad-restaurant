@@ -1,34 +1,55 @@
 package com.VaradRestaurant.VaradRestaurant.Bean;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import jakarta.annotation.Generated;
 
 
 
 @Document(collection = "dishes")
 public class DishBean {
-    int id;
+    @Id
+    private String id;
+    private String name;
+    private String description;
+    private int price;
+    private String dishImageURL;
+    private int categoryId;
+    private boolean isAvailable;
 
-    String name;
-
-    int categoryId;
-
-    String dishURL;
-
-    int price;
-
-    int rating;
-    
-    boolean isAvailable;
-
-
-
-    public DishBean(int categoryId, String dishURL, boolean isAvailable, String name, int price, int rating) {
-        this.categoryId = categoryId;
-        this.dishURL = dishURL;
-        this.isAvailable = isAvailable;
+    public DishBean(String name, String description, int price, String dishImageURL, int categoryId,
+            boolean isAvailable) {
         this.name = name;
+        this.description = description;
         this.price = price;
-        this.rating = rating;
+        this.dishImageURL = dishImageURL;
+        this.categoryId = categoryId;
+        this.isAvailable = isAvailable;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getPrice() {
@@ -39,37 +60,12 @@ public class DishBean {
         this.price = price;
     }
 
-    public DishBean() {
+    public String getDishImageURL() {
+        return dishImageURL;
     }
 
-    public String getDishURL() {
-        return dishURL;
-    }
-
-    public void setDishURL(String dishURL) {
-        this.dishURL = dishURL;
-    }
-
-    public DishBean(String name, int categoryId) {
-        this.name = name;
-        this.categoryId = categoryId;
-    }
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setDishImageURL(String dishImageURL) {
+        this.dishImageURL = dishImageURL;
     }
 
     public int getCategoryId() {
@@ -87,12 +83,5 @@ public class DishBean {
     public void setIsAvailable(boolean isAvailable) {
         this.isAvailable = isAvailable;
     }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
+    
 }

@@ -33,19 +33,20 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody AuthRequest authRequest){
 
-        if(userRepository.findByUserName(authRequest.getUsername()).isPresent()){
+        if(userRepository.findByUsername(authRequest.getUsername()).isPresent()){
             return ResponseEntity.badRequest().body("UserName Already Exist");
         }
 
         String encodedPassword = passwordEncoder.encode(authRequest.getPassword());
-        UserBean userBean = new UserBean(authRequest.getUsername(),encodedPassword);
+        UserBean userBean = new UserBean(encodedPassword,authRequest.getUsername());
+        userRepository.save(userBean);
         return ResponseEntity.ok("User Register Successfully");
     }
 
     @PostMapping("/login")
     public String login(@RequestBody AuthRequest authRequest){
         try{
-            Optional<UserBean> user = userRepository.findByUserName(authRequest.getUsername());
+            Optional<UserBean> user = userRepository.findByUsername(authRequest.getUsername());
             if (user.isEmpty()) {
                 throw new RuntimeException("Invalid username or password");
             }
